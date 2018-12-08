@@ -1,0 +1,39 @@
+---
+layout: default
+permalink: /articles/:title.md
+---
+<h1>{{ page.title }}</h1>
+
+<p>
+  {{ page.date | date: "%Y.%m.%d" }}
+</p>
+
+{{ content }}
+
+<div class="ui section divider"></div>
+
+<div class="ui overlay raised  purple  centered bordered segment">
+  <div class="content">
+    <div class="header">关于本文</div>
+    <div class="ui divider"></div>
+  </div>
+  <div class="extra content">
+    <div class="ui list">
+      <div class="item">
+        <div class="content"> 转载请注明出处！</div>
+      </div>
+      <div class="item">
+        <div class="content">日期：{{page.date| date: "%Y.%m.%d" }}</div>
+      </div>
+      <div class="item">
+        <div class="content">标题：{{page.title}}</div>
+      </div>
+      <div class="item">
+        <div class="content">本文地址：{{site.url}}{{page.url}}</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="ui hidden divider"></div>

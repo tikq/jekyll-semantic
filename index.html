@@ -1,0 +1,72 @@
+---
+layout: default
+title: Home
+---
+
+<h1>Latest Posts</h1>
+
+<div class="ui hidden  divider"></div>
+<div class="ui divided items">
+    
+    {% for post in paginator.posts %}
+    <div class="ui item">
+      <div class="ui raised segment ">
+          <a class="ui red ribbon label">{{post.categories}}</a><a class="header">{{ post.title }}</a>
+        <div class="meta">
+          <span class="cinema">{{ post.date | date: "%Y.%m.%d"  }}</span>
+          <span class="cinema">{{ post.author }}</span>
+        </div>
+        <div class="description">
+          <p>{{ post.excerpt }}</p>
+        </div>
+        <div class="small extra">
+          <div class="ui mini tag labels">
+              {% for tag in post.tags %}
+              <a class="ui teal  label">{{tag}} </a>
+              {% endfor %}
+            </div>
+          <a class="ui right floated primary button" href="{{ post.url }}">Read more<i class="right chevron icon"></i> </a>
+        </div>
+        
+      </div>
+    </div>
+    
+    {% endfor %}
+  </div>
+
+  {% if paginator.total_pages > 1 %}
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a class="ui left  primary button" href="{{ paginator.previous_page_path | relative_url }}">
+        <i class="left chevron icon"></i>
+        Prev
+      </a>
+  {% else %}
+  <span>Prev &raquo;</span>
+  {% endif %}
+
+  {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+      <em>{{ page }}</em>
+    {% elsif page == 1 %}
+      <a class="circular ui purple  label" href="{{ paginator.previous_page_path | relative_url }}">
+        {{ page }}
+      </a>
+    {% else %}
+      <a class="circular ui purple  label" href="{{ site.paginate_path | relative_url | replace: ':num', page }}">
+        {{ page }}
+      </a>
+    {% endif %}
+  {% endfor %}
+
+  {% if paginator.next_page %}
+    <a class="ui right  primary button" href="{{ paginator.next_page_path | relative_url }}">
+        Next<i class="right chevron icon"></i> </a> 
+  {% else %}
+    <span>Next &raquo;</span>
+  {% endif %}
+</div>
+{% endif %}
+
+<div class="ui hidden divider"></div>
+

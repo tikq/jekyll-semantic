@@ -1,0 +1,20 @@
+---
+layout: default
+title: Links
+---
+<h1>Links</h1>
+
+<div class="ui hidden  divider"></div>
+<div class="ui divided items">
+    {% for item in site.data.links %}
+    <div class="ui raised segment">
+        <div class="item">
+            <a class="header" href="{{ item.link }}">{{ item.name }}</a>
+            <div class="description">
+                <p>{{ item.description }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<div class="ui hidden  divider"></div>

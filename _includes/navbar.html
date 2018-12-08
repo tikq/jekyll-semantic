@@ -1,0 +1,14 @@
+<div  class="ui borderless main  menu">
+    <div class="ui text container">
+        <div class="header item" href="#">
+            <img class="ui mini circular image" src="/assets/images/avator.jpg">
+                Blog
+            </img>
+        </div>
+        {% for item in site.data.navbar %}
+        <a class="item" href="{{ item.link }}">
+            {{ item.name }}
+        </a>
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,24 @@
+---
+layout: default
+title: Categories
+---
+
+<h1>Categories</h1>
+
+<div class="ui  padded   segments">
+  {% for category in site.categories %}
+  <div class="ui raised violet segment">
+    <a class="ui red ribbon label">{{ category[0] }}</a>
+    <div class="ui items">
+        {% for post in category[1] %}
+      <div class="item">        
+        <a class="header" href="{{ post.url }}">{{ post.title }}</a>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+  {% endfor %}
+</div>
+
+<div class="ui hidden  divider"></div>
