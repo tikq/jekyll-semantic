@@ -9,7 +9,7 @@ title: Links
     {% for item in site.data.links %}
     <div class="ui raised segment">
         <div class="item">
-            <a class="header" href="{{ item.link }}">{{ item.name }}</a>
+            <a class="header" href="{{site.url}}{{ item.link }}">{{ item.name }}</a>
             <div class="description">
                 <p>{{ item.description }}</p>
             </div>

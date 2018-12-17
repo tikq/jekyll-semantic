@@ -1,12 +1,12 @@
 <div  class="ui borderless main stackable menu">
     <div class="ui text container">
         <div class="header item" href="#">
-            <img class="ui mini circular image" src="/assets/images/avator.jpg">
+            <img class="ui mini circular image" src="{{ site.baseurl }}/assets/images/avator.jpg">
                 Blog
             </img>
         </div>
         {% for item in site.data.navbar %}
-        <a class="item" href="{{ item.link }}">
+        <a class="item" href="{{ site.baseurl }}{{ item.link }}">
             {{ item.name }}
         </a>
         {% endfor %}
