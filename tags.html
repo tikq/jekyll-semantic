@@ -12,7 +12,7 @@ title: Tags
      <div class="ui items">
         {% for post in tag[1] %}
       <div class="item">          
-        <a class="header" href="{{site.url}}{{ post.url }}">{{ post.title }}</a>
+        <a class="header" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
       </div>
       {% endfor %}
     </div>

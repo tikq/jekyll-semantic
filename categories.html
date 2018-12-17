@@ -12,7 +12,7 @@ title: Categories
     <div class="ui items">
         {% for post in category[1] %}
       <div class="item">        
-        <a class="header" href="{{ post.url }}">{{ post.title }}</a>
+        <a class="header" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
       </div>
       {% endfor %}
     </div>
